@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews</title>
+    <link rel="stylesheet" href="/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <h1>Company Reviews</h1>
+        <p>Here You can find all companies Reviews</p>
+    </header>
+    <hr>
+    <div class="form-box">
+        <h2>Add Reviews</h2>
+        <form onsubmit="OnSubmit(event)" class="my-form">
+            <input type="text" name="name" id="name" class="input input-1" placeholder="Company Name">
+            <input type="text" name="pros" id="pros" class="input input-2" placeholder="Reviews">
+            <input type="text" name="cons" id="cons" class="input input-3" placeholder="Conclusion">
+            <input type="number" name="rating" id="rating" placeholder="One to Five acceptable">
+            <div class="col-12">
+                <button type="submit" class="btn btn-outline-success btn-style">Add Review</button>
+            </div>
+        </form>
+    </div>
+    <hr>
+    <div class="displayReviews">
+        <form class="search-form">
+            <input type="search" name="companyName" id="companyName" placeholder="Search here..." name="search">
+            <button type="submit">Search</button>
+        </form>
+        <hr>
+    </div>
+    <div id="reviewsBox">
+    </div>
+
+    <!-- scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <script src="/index.js"></script>
+</body>
+
+</html>
