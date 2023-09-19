@@ -1,5 +1,5 @@
 
-document.getElementById('search').addEventListener('keyup' , filterItems);
+document.getElementById('search').addEventListener('keyup', filterItems);
 
 
 async function OnSubmit(event) {
@@ -34,18 +34,22 @@ async function OnSubmit(event) {
     event.target.rating.value = '';
 }
 
-// document.addEventListener('DOMContentLoaded', async () => {
-//     try {
-//         let res = await axios.get('http://localhost:4000/review');
-//         console.log(res.data);
-//         for (var i = 0; i < res.data.length; i++) {
-//             display(res.data[i]);
-//         }
-//     }
-//     catch (err) {
-//         console.log(err);
-//     }
-// });
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        let res = await axios.get('http://localhost:4000/review');
+        console.log(res.data);
+        for (var i = 0; i < res.data.length; i++) {
+            display(res.data[i]);
+        }
+        let ul = document.getElementById('reviewsBox')
+        Array.from(ul.getElementsByClassName('li-js')).forEach(item => {
+            item.style.display = 'none';
+        })
+    }
+    catch (err) {
+        console.log(err);
+    }
+});
 
 
 
@@ -97,16 +101,17 @@ async function display(reviewObj) {
 
 //  filtering items
 
-function filterItems(e){
-    let text = e.target.value;
+function filterItems(e) {
+    let text = e.target.value || "";
     let ul = document.getElementById('reviewsBox')
-    Array.from(ul.getElementsByClassName('li-js')).forEach(item =>{ 
-       if(item.textContent.indexOf(text) !== -1){
-           item.style.display='block'
-        } else{
-            item.style.display='none';
-       }
-    
+    Array.from(ul.getElementsByClassName('li-js')).forEach(item => {
+
+        if (item.textContent.indexOf(text) !== -1) {
+            item.style.display = 'block'
+        } else {
+            item.style.display = 'none';
+        }
+
     })
 }
 
